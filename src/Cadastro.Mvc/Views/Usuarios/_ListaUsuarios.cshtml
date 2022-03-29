@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Cadastro.Mvc.ViewModels.UsuarioViewModel>
+
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefone)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td class="telefone">
+                    @Html.DisplayFor(modelItem => item.Telefone)
+                </td>
+                <td class="text-right">
+                    <a class="btn btn-info" asp-controller="Usuarios" asp-action="Editar" asp-route-id="@item.Id"><span class="fa fa-pencil-alt"></span> </a>
+                    <a class="btn btn-danger" asp-controller="Usuarios" asp-action="Excluir" asp-route-id="@item.Id"><span class="fa fa-trash"></span> </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script>
+    
+</script>

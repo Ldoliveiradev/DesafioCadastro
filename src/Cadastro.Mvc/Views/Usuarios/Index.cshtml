@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Cadastro.Mvc.ViewModels.UsuarioViewModel>
+
+@{
+    ViewData["Title"] = "Lista de Usuários";
+}
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+
+<vc:Summary></vc:Summary>
+
+<p>
+    <a class="btn btn-info" asp-action="Criar">Novo Usuário</a>
+</p>
+
+<partial name="_ListaUsuarios"/>
